@@ -4,6 +4,7 @@ A very simple(so far) 2d platform game built using C++ and SFML
 
 -------------------------------
 Name: Simon "Sy" Schmidt
+
 Language: C++
 
 ## Features
