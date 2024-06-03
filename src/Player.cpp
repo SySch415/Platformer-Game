@@ -58,11 +58,13 @@ void Player::handleInput() {
 }
 
 void Player::update(float deltaTime, const std::vector<Platform>& platforms, const RenderWindow& window) {
-    velocity.y += gravity * deltaTime;
 
+    // player jumps calculated with time and gravity
+    velocity.y += gravity * deltaTime;
+    // player moves calculated with time
     sprite.move(velocity * deltaTime);
 
-    // Wrap sprite around screen if leaving getBounds
+    // Wrap sprite around screen if leaving bounds
     FloatRect bounds = sprite.getGlobalBounds();
 
     if (bounds.left + bounds.width < 0) {
@@ -77,7 +79,7 @@ void Player::update(float deltaTime, const std::vector<Platform>& platforms, con
       sprite.setPosition(400,300);
     }
 
-
+    // for sprite collisions against platform
     for (const auto& platform : platforms) {
 
       if (sprite.getGlobalBounds().intersects(platform.getBounds()) && velocity.y > 0) {

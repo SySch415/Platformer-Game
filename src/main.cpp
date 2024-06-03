@@ -9,17 +9,21 @@ using namespace std;
 
 int main (int argc, char *argv[]) {
    
+    // pop up the game window
     RenderWindow window(
         VideoMode(800, 600), "2D Platformer Game");
     Player player;
 
+    // platform positions
     vector<Platform> platforms;
     platforms.push_back(Platform(100, 500, 200, 20));
     platforms.push_back(Platform(400, 400, 200, 20));
     platforms.push_back(Platform(700, 300, 200, 20));
 
     Clock gameClock;
-
+    
+    // keep window open until user exits out
+    // render spite, render platforms, handle player updates
     while (window.isOpen()) {
       
       Event event;
