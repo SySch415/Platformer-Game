@@ -21,7 +21,7 @@ Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping
 void Player::handleInput() {
 
     // player moves left
-    if (Keyboard::isKeyPressed(Keyboard::Left) && !isJumping) {
+    if (Keyboard::isKeyPressed(Keyboard::Left)) {
       velocity.x = -speed;
     
     }
@@ -40,7 +40,7 @@ void Player::handleInput() {
       velocity.x = speed;
     }
     // player jumps
-    if (Keyboard::isKeyPressed(Keyboard::Up) && !isJumping || 
+    if (Keyboard::isKeyPressed(Keyboard::Up) || 
         Keyboard::isKeyPressed(Keyboard::Up) && Keyboard::isKeyPressed(Keyboard::Left) ||
         Keyboard::isKeyPressed(Keyboard::Up) && Keyboard::isKeyPressed(Keyboard::Right)) {
 
