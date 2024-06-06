@@ -1,0 +1,7 @@
+# ignore build files
+/build/
+
+# ignore OS files
+.DS_Store
+
+
