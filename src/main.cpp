@@ -8,7 +8,7 @@ using namespace sf;
 using namespace std;
 
 int main (int argc, char *argv[]) {
-   
+    
     // pop up the game window
     RenderWindow window(
         VideoMode(800, 600), "2D Platformer Game");
@@ -16,9 +16,9 @@ int main (int argc, char *argv[]) {
 
     // platform positions
     vector<Platform> platforms;
-    platforms.push_back(Platform(100, 500, 200, 20));
-    platforms.push_back(Platform(400, 400, 200, 20));
-    platforms.push_back(Platform(700, 300, 200, 20));
+    platforms.push_back(Platform(100, 100, 20, 200));
+    
+    platforms.push_back(Platform(700, 500, 20, 200));
 
     Clock gameClock;
     
@@ -38,12 +38,18 @@ int main (int argc, char *argv[]) {
       player.update(deltaTime, platforms, window);
 
       window.clear();
-      player.render(window);
 
-      for (auto& platform : platforms) {
-        platform.render(window);
+      if (player.isGameOver()) {
+          player.renderGameOver(window);
+      } else {
+
+        player.render(window);
+
+        for (auto& platform : platforms) {
+          platform.render(window);
+        }
+
       }
-
       window.display();
     }
 

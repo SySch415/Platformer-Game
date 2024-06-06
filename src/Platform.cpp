@@ -3,7 +3,7 @@
 // constuctor to initialize platforms
 Platform::Platform(float x, float y, float width, float height) {
   shape.setSize(Vector2f(width, height));
-  shape.setFillColor(Color::Green);
+  shape.setFillColor(Color::Red);
   shape.setPosition(x, y);
 }
 

@@ -7,15 +7,28 @@ using namespace sf;
 using namespace std;
 
 // Define Player methods
-Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping(false) {
+Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping(false), gameOver(false) {
     // load a texture image
     if (!texture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/resized_sprite.png")) {
         
-      cout << "Error loading image" << endl; //TODO: change error throw
+      cerr << "Error loading image" << endl;
     }
     sprite.setTexture(texture);
     sprite.setPosition(400,300); // start position
     velocity = Vector2f(0,0);
+
+      // load font
+    if (!font.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/fonts/Tiny5-Regular.ttf")) {
+      cerr << "Error loading font" << endl;
+      return;
+    }
+
+    // set up "game over" text
+    gameOverText.setFont(font);
+    gameOverText.setString("Game Over!");
+    gameOverText.setCharacterSize(50);
+    gameOverText.setFillColor(Color::White);
+    gameOverText.setPosition(250, 350);
 }
 
 void Player::handleInput() {
@@ -59,6 +72,8 @@ void Player::handleInput() {
 
 void Player::update(float deltaTime, const std::vector<Platform>& platforms, const RenderWindow& window) {
 
+    bool isGameOver = false;
+
     // player jumps calculated with time and gravity
     velocity.y += gravity * deltaTime;
     // player moves calculated with time
@@ -80,12 +95,12 @@ void Player::update(float deltaTime, const std::vector<Platform>& platforms, con
     }
 
     // for sprite collisions against platform
+    isGameOver = false;
     for (const auto& platform : platforms) {
 
-      if (sprite.getGlobalBounds().intersects(platform.getBounds()) && velocity.y > 0) {
-        velocity.y = 0;
-        isJumping = false;
-        sprite.setPosition(sprite.getPosition().x, platform.getBounds().top - sprite.getGlobalBounds().height);
+      if (sprite.getGlobalBounds().intersects(platform.getBounds())) {
+        gameOver = true;
+        break;
       }
     }
 
@@ -97,4 +112,15 @@ void Player::update(float deltaTime, const std::vector<Platform>& platforms, con
 void Player::render(RenderWindow& window) {
     // Render player
     window.draw(sprite);
+}
+
+// returns true if sprite collides with obstacle
+bool Player::isGameOver() const {
+      
+  return gameOver;
+}
+
+void Player::renderGameOver(RenderWindow& window) {
+  
+    window.draw(gameOverText);
 }
