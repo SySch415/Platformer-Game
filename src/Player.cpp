@@ -1,5 +1,5 @@
 #include "Player.h"
-#include "Platform.h"
+#include "Obstacle.h"
 #include <iostream>
 #include <vector>
 
@@ -70,7 +70,7 @@ void Player::handleInput() {
     */
 }
 
-void Player::update(float deltaTime, const std::vector<Platform>& platforms, const RenderWindow& window) {
+void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, const RenderWindow& window) {
 
     bool isGameOver = false;
 
@@ -96,9 +96,9 @@ void Player::update(float deltaTime, const std::vector<Platform>& platforms, con
 
     // for sprite collisions against platform
     isGameOver = false;
-    for (const auto& platform : platforms) {
+    for (const auto& obstacle : obstacles) {
 
-      if (sprite.getGlobalBounds().intersects(platform.getBounds())) {
+      if (sprite.getGlobalBounds().intersects(obstacle.getBounds())) {
         gameOver = true;
         break;
       }

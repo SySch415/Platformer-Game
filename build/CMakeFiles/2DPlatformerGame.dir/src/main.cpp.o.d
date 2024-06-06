@@ -955,4 +955,4 @@ CMakeFiles/2DPlatformerGame.dir/src/main.cpp.o: \
   /Users/sy/dev/cpp-projects/2d_platformer_game/include/Player.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/istream \
-  /Users/sy/dev/cpp-projects/2d_platformer_game/include/Platform.h
+  /Users/sy/dev/cpp-projects/2d_platformer_game/include/Obstacle.h

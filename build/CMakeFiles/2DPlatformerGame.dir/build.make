@@ -97,32 +97,32 @@ CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sy/dev/cpp-projects/2d_platformer_game/src/Player.cpp -o CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.s
 
-CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o: CMakeFiles/2DPlatformerGame.dir/flags.make
-CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o: /Users/sy/dev/cpp-projects/2d_platformer_game/src/Platform.cpp
-CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o: CMakeFiles/2DPlatformerGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sy/dev/cpp-projects/2d_platformer_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o -MF CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o.d -o CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o -c /Users/sy/dev/cpp-projects/2d_platformer_game/src/Platform.cpp
+CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o: CMakeFiles/2DPlatformerGame.dir/flags.make
+CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o: /Users/sy/dev/cpp-projects/2d_platformer_game/src/Obstacle.cpp
+CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o: CMakeFiles/2DPlatformerGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/sy/dev/cpp-projects/2d_platformer_game/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o -MF CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o.d -o CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o -c /Users/sy/dev/cpp-projects/2d_platformer_game/src/Obstacle.cpp
 
-CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sy/dev/cpp-projects/2d_platformer_game/src/Platform.cpp > CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.i
+CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sy/dev/cpp-projects/2d_platformer_game/src/Obstacle.cpp > CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.i
 
-CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sy/dev/cpp-projects/2d_platformer_game/src/Platform.cpp -o CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.s
+CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sy/dev/cpp-projects/2d_platformer_game/src/Obstacle.cpp -o CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.s
 
 # Object files for target 2DPlatformerGame
 2DPlatformerGame_OBJECTS = \
 "CMakeFiles/2DPlatformerGame.dir/src/main.cpp.o" \
 "CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.o" \
-"CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o"
+"CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o"
 
 # External object files for target 2DPlatformerGame
 2DPlatformerGame_EXTERNAL_OBJECTS =
 
 2DPlatformerGame: CMakeFiles/2DPlatformerGame.dir/src/main.cpp.o
 2DPlatformerGame: CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.o
-2DPlatformerGame: CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o
+2DPlatformerGame: CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o
 2DPlatformerGame: CMakeFiles/2DPlatformerGame.dir/build.make
 2DPlatformerGame: /opt/homebrew/opt/sfml/lib/libsfml-graphics.2.6.1.dylib
 2DPlatformerGame: /opt/homebrew/opt/sfml/lib/libsfml-window.2.6.1.dylib

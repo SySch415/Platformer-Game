@@ -129,29 +129,29 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DPlatformerGame.dir/build.make CMakeFiles/2DPlatformerGame.dir/build
 .PHONY : 2DPlatformerGame/fast
 
-src/Platform.o: src/Platform.cpp.o
-.PHONY : src/Platform.o
+src/Obstacle.o: src/Obstacle.cpp.o
+.PHONY : src/Obstacle.o
 
 # target to build an object file
-src/Platform.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DPlatformerGame.dir/build.make CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o
-.PHONY : src/Platform.cpp.o
+src/Obstacle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DPlatformerGame.dir/build.make CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o
+.PHONY : src/Obstacle.cpp.o
 
-src/Platform.i: src/Platform.cpp.i
-.PHONY : src/Platform.i
+src/Obstacle.i: src/Obstacle.cpp.i
+.PHONY : src/Obstacle.i
 
 # target to preprocess a source file
-src/Platform.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DPlatformerGame.dir/build.make CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.i
-.PHONY : src/Platform.cpp.i
+src/Obstacle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DPlatformerGame.dir/build.make CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.i
+.PHONY : src/Obstacle.cpp.i
 
-src/Platform.s: src/Platform.cpp.s
-.PHONY : src/Platform.s
+src/Obstacle.s: src/Obstacle.cpp.s
+.PHONY : src/Obstacle.s
 
 # target to generate assembly for a file
-src/Platform.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DPlatformerGame.dir/build.make CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.s
-.PHONY : src/Platform.cpp.s
+src/Obstacle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DPlatformerGame.dir/build.make CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.s
+.PHONY : src/Obstacle.cpp.s
 
 src/Player.o: src/Player.cpp.o
 .PHONY : src/Player.o
@@ -210,9 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 2DPlatformerGame"
-	@echo "... src/Platform.o"
-	@echo "... src/Platform.i"
-	@echo "... src/Platform.s"
+	@echo "... src/Obstacle.o"
+	@echo "... src/Obstacle.i"
+	@echo "... src/Obstacle.s"
 	@echo "... src/Player.o"
 	@echo "... src/Player.i"
 	@echo "... src/Player.s"

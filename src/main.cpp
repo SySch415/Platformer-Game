@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
-#include "Platform.h"
+#include "Obstacle.h"
 #include <vector>
 #include <iostream>
 
@@ -15,10 +15,9 @@ int main (int argc, char *argv[]) {
     Player player;
 
     // platform positions
-    vector<Platform> platforms;
-    platforms.push_back(Platform(100, 100, 20, 200));
-    
-    platforms.push_back(Platform(700, 500, 20, 200));
+    vector<Obstacle> obstacles;
+    obstacles.push_back(Obstacle(100, 100, 20, 200));
+    obstacles.push_back(Obstacle(700, 500, 20, 200));
 
     Clock gameClock;
     
@@ -35,7 +34,7 @@ int main (int argc, char *argv[]) {
       float deltaTime = gameClock.restart().asSeconds();
       
       player.handleInput();
-      player.update(deltaTime, platforms, window);
+      player.update(deltaTime, obstacles, window);
 
       window.clear();
 
@@ -45,8 +44,8 @@ int main (int argc, char *argv[]) {
 
         player.render(window);
 
-        for (auto& platform : platforms) {
-          platform.render(window);
+        for (auto& obstacle : obstacles) {
+          obstacle.render(window);
         }
 
       }

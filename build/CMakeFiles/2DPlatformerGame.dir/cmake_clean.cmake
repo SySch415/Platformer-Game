@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "2DPlatformerGame"
   "2DPlatformerGame.pdb"
-  "CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o"
-  "CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o.d"
+  "CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o"
+  "CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o.d"
   "CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.o"
   "CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.o.d"
   "CMakeFiles/2DPlatformerGame.dir/src/main.cpp.o"

@@ -1,6 +1,6 @@
-CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.o: \
-  /Users/sy/dev/cpp-projects/2d_platformer_game/src/Player.cpp \
-  /Users/sy/dev/cpp-projects/2d_platformer_game/include/Player.h \
+CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o: \
+  /Users/sy/dev/cpp-projects/2d_platformer_game/src/Obstacle.cpp \
+  /Users/sy/dev/cpp-projects/2d_platformer_game/include/Obstacle.h \
   /opt/homebrew/opt/sfml/include/SFML/Graphics.hpp \
   /opt/homebrew/opt/sfml/include/SFML/Window.hpp \
   /opt/homebrew/opt/sfml/include/SFML/System.hpp \
@@ -952,7 +952,4 @@ CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.o: \
   /opt/homebrew/opt/sfml/include/SFML/Graphics/Glsl.inl \
   /opt/homebrew/opt/sfml/include/SFML/Graphics/Sprite.hpp \
   /opt/homebrew/opt/sfml/include/SFML/Graphics/Text.hpp \
-  /opt/homebrew/opt/sfml/include/SFML/Graphics/VertexBuffer.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iostream \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/istream \
-  /Users/sy/dev/cpp-projects/2d_platformer_game/include/Obstacle.h
+  /opt/homebrew/opt/sfml/include/SFML/Graphics/VertexBuffer.hpp

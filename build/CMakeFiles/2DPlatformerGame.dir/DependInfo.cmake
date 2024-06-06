@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/sy/dev/cpp-projects/2d_platformer_game/src/Platform.cpp" "CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o" "gcc" "CMakeFiles/2DPlatformerGame.dir/src/Platform.cpp.o.d"
+  "/Users/sy/dev/cpp-projects/2d_platformer_game/src/Obstacle.cpp" "CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o" "gcc" "CMakeFiles/2DPlatformerGame.dir/src/Obstacle.cpp.o.d"
   "/Users/sy/dev/cpp-projects/2d_platformer_game/src/Player.cpp" "CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.o" "gcc" "CMakeFiles/2DPlatformerGame.dir/src/Player.cpp.o.d"
   "/Users/sy/dev/cpp-projects/2d_platformer_game/src/main.cpp" "CMakeFiles/2DPlatformerGame.dir/src/main.cpp.o" "gcc" "CMakeFiles/2DPlatformerGame.dir/src/main.cpp.o.d"
   )
