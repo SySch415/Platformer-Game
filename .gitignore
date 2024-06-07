@@ -1,5 +1,5 @@
 # ignore build files
-/build/
+build
 
 # Compiled source 
 *.com
@@ -28,6 +28,7 @@
 
 # OS generated files 
 .DS_Store
+/.DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100

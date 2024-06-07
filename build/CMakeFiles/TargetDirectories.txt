@@ -1,3 +1,0 @@
-/Users/sy/dev/cpp-projects/2d_platformer_game/build/CMakeFiles/2DPlatformerGame.dir
-/Users/sy/dev/cpp-projects/2d_platformer_game/build/CMakeFiles/edit_cache.dir
-/Users/sy/dev/cpp-projects/2d_platformer_game/build/CMakeFiles/rebuild_cache.dir

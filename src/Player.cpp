@@ -9,7 +9,7 @@ using namespace std;
 // Define Player methods
 Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping(false), gameOver(false) {
     // load a texture image
-    if (!texture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/resized_sprite.png")) {
+    if (!texture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/blimp_transparent copy.png")) {
         
       cerr << "Error loading image" << endl;
     }
