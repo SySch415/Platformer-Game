@@ -103,10 +103,6 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
         break;
       }
     }
-
-    if (velocity != Vector2f(0,0)) {
-      isJumping = true;
-    }
 }
 
 void Player::render(RenderWindow& window) {
@@ -120,6 +116,7 @@ bool Player::isGameOver() const {
   return gameOver;
 }
 
+// if player collides with obstacle, render game over screen
 void Player::renderGameOver(RenderWindow& window) {
   
     window.draw(gameOverText);
