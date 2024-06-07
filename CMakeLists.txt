@@ -11,7 +11,7 @@ include_directories(include /opt/homebrew/Cellar/sfml/2.6.1/include)
 link_directories(/opt/homebrew/Cellar/sfml/2.6.1/lib)
 
 # Add executable
-add_executable(2DPlatformerGame src/main.cpp src/Player.cpp src/Platform.cpp)
+add_executable(2DPlatformerGame src/main.cpp src/Player.cpp src/Obstacle.cpp)
 
 # Link SFML libraries
 target_link_libraries(2DPlatformerGame sfml-system sfml-window sfml-graphics)

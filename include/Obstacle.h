@@ -1,15 +1,15 @@
-#ifndef PLATFORM_H
-#define PLATFORM_H
+#ifndef Obstacle_H
+#define Obstacle_H
 
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
 
-class Platform {
+class Obstacle{
 
 public:
 
-    Platform(float x, float y, float width, float height);
+    Obstacle(float x, float y, float width, float height);
     void render(RenderWindow& window);
     FloatRect getBounds() const;
 
