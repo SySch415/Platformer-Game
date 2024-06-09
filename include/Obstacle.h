@@ -5,7 +5,7 @@
 
 using namespace sf;
 
-class Obstacle{
+class Obstacle {
 
 public:
 

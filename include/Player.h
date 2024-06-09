@@ -11,7 +11,7 @@ class Player {
 public:
     Player();
     void handleInput();
-    void update(float deltaTime, const std::vector<Obstacle>& obstacles, const RenderWindow& window);
+    void update(float deltaTime, const std::vector<Obstacle>& obstacles, const RenderWindow& window, const View& view);
     void render(RenderWindow& window);
     bool isGameOver() const;
     void renderGameOver(RenderWindow& window);

@@ -28,7 +28,6 @@ Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping
     gameOverText.setString("Game Over!");
     gameOverText.setCharacterSize(50);
     gameOverText.setFillColor(Color::White);
-    gameOverText.setPosition(250, 350);
 }
 
 void Player::handleInput() {
@@ -70,7 +69,7 @@ void Player::handleInput() {
     */
 }
 
-void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, const RenderWindow& window) {
+void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, const RenderWindow& window, const View& view) {
 
     bool isGameOver = false;
 
@@ -79,15 +78,19 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
     // player moves calculated with time
     sprite.move(velocity * deltaTime);
 
-    // Wrap sprite around screen if leaving bounds
+    
     FloatRect bounds = sprite.getGlobalBounds();
 
+    /*
+    
+    // Wrap sprite around screen if leaving bounds
     if (bounds.left + bounds.width < 0) {
       sprite.setPosition(window.getSize().x, sprite.getPosition().y);
 
     } else if (bounds.left > window.getSize().x) {
       sprite.setPosition(-bounds.width, sprite.getPosition().y);
     }
+    */
     
     // if sprite dies, reset position to start position
     if (bounds.top > window.getSize().y) {
@@ -100,6 +103,8 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
 
       if (sprite.getGlobalBounds().intersects(obstacle.getBounds())) {
         gameOver = true;
+        gameOverText.setPosition(view.getCenter().x - gameOverText.getGlobalBounds().width / 2,
+            view.getCenter().y - gameOverText.getGlobalBounds().height / 2);
         break;
       }
     }
@@ -118,6 +123,5 @@ bool Player::isGameOver() const {
 
 // if player collides with obstacle, render game over screen
 void Player::renderGameOver(RenderWindow& window) {
-  
     window.draw(gameOverText);
 }

@@ -8,12 +8,14 @@ Project will probably follow flappy bird game logic
 - [Completed](#completed)
 
 ## TO-DO List
-- [ ] Task : Implement random repeating vertical obstacles as screen moves
 - [ ] Task : blimp animation(up and down animation)
 - [ ] Task : Add background image
+- [ ] Task : Change lower boundary to game over screen
+- [ ] Task : Fix obstacle position rendering
+- [ ] Task : Fix obstacle bounds(extending beyond visual render for some reason)
 
 ## In Progress
-- [ ] Task : Implement random repeating vertical obstacles as screen moves
+- [ ] Task : Fix game over text not centering when rendered(also moving??)
 
 ## Completed
 - [x] Task : Implement sprite movement
@@ -22,6 +24,7 @@ Project will probably follow flappy bird game logic
 - [x] Task : Implement sprite collision logic obstacles
 - [x] Task : Change sprite to blimp
 - [x] Task : Implement vertical column obstacles
+- [x] Task : Implement random repeating vertical obstacles as screen moves
 
 
 
