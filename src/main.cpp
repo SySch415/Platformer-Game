@@ -14,9 +14,34 @@ int main (int argc, char *argv[]) {
         VideoMode(800, 600), "2D Platformer Game");
     Player player;
 
+    // load background image
+    Texture backgroundTexture;
+
+    if (!backgroundTexture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/6fb59f66648033799c3059fd1943b319.png")) {
+        return -1;
+    }
+
+    // background sprites for scrolling
+    Sprite backgroundSprite, backgroundSprite2;
+    backgroundSprite.setTexture(backgroundTexture);
+    backgroundSprite2.setTexture(backgroundTexture);
+
+    Vector2u textureSize = backgroundTexture.getSize();
+    Vector2u windowSize = window.getSize();
+
+    // scale background to size of window
+    float scaleX = static_cast<float>(windowSize.x) / textureSize.x;
+    float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
+    backgroundSprite.setScale(scaleX, scaleY);
+    backgroundSprite2.setScale(scaleX, scaleY);
+
+    // position second background image to the right of first for scrolling
+    backgroundSprite2.setPosition(backgroundSprite.getGlobalBounds().width, 0);
+
     // define view
-    View view(FloatRect(0, 0, 800, 600));
+    View view = window.getDefaultView();
     
+    // view movement speed
     float viewSpeed = 50.0f;
 
     // platform positions
@@ -41,13 +66,30 @@ int main (int argc, char *argv[]) {
       }
 
       float deltaTime = gameClock.restart().asSeconds();
+      float offset = viewSpeed * deltaTime;
       
-      view.move(viewSpeed * deltaTime, 0);
+      view.move(offset, 0);
 
+      // get width of background image
+      float backgroundWidth = backgroundSprite.getGlobalBounds().width;
+
+      // move background image at opposite direction of view
+      backgroundSprite.move(-offset, 0);
+      backgroundSprite2.move(-offset, 0);
+      
+      // position sprites to the right of previous sprite as sprite leaves view
+      if (backgroundSprite.getPosition().x + backgroundWidth < window.getView().getCenter().x - window.getView().getSize().x / 2) {
+        backgroundSprite.setPosition(backgroundSprite2.getPosition().x + backgroundWidth, 0);
+      }
+      if (backgroundSprite2.getPosition().x + backgroundWidth < window.getView().getCenter().x - window.getView().getSize().x / 2) {
+        backgroundSprite2.setPosition(backgroundSprite.getPosition().x + backgroundWidth, 0);
+      }
+
+      // render new obstacles as view changes
       static float lastObstacle = view.getCenter().x + 400;
       if (view.getCenter().x + 400 > lastObstacle) {
         float newX = lastObstacle + 200;
-        float newY = static_cast<float>(rand() % 600);
+        float newY = static_cast<float>(rand() % 300);
         obstacles.push_back(Obstacle(newX, newY, 20, 200));
         obstacles.push_back(Obstacle(newX - 600, newY - 400, 20, 200));
         lastObstacle = newX;
@@ -63,9 +105,12 @@ int main (int argc, char *argv[]) {
           player.renderGameOver(window);
       } else {
 
+        window.draw(backgroundSprite);
+        window.draw(backgroundSprite2);
+
         player.render(window);
         
-         window.setView(view);
+        window.setView(view);
 
         for (auto& obstacle : obstacles) {
           obstacle.render(window);

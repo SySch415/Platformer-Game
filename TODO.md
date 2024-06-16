@@ -15,7 +15,7 @@ Project will probably follow flappy bird game logic
 - [ ] Task : Fix obstacle bounds(extending beyond visual render for some reason)
 
 ## In Progress
-- [ ] Task : Fix game over text not centering when rendered(also moving??)
+- [ ] Task : Add background image
 
 ## Completed
 - [x] Task : Implement sprite movement
@@ -25,6 +25,9 @@ Project will probably follow flappy bird game logic
 - [x] Task : Change sprite to blimp
 - [x] Task : Implement vertical column obstacles
 - [x] Task : Implement random repeating vertical obstacles as screen moves
+- [x] Task : Fix game over text not centering when rendered(also moving??)
+
+
 
 
 
