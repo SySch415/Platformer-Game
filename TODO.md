@@ -8,14 +8,15 @@ Project will probably follow flappy bird game logic
 - [Completed](#completed)
 
 ## TO-DO List
-- [ ] Task : blimp animation(up and down animation)
-- [ ] Task : Add background image
-- [ ] Task : Change lower boundary to game over screen
-- [ ] Task : Fix obstacle position rendering
-- [ ] Task : Fix obstacle bounds(extending beyond visual render for some reason)
+- [] Task : blimp animation(up and down animation)
+- [] Task : Change to better background
+- [] Task : Change lower boundary to game over screen
+- [] Task : Fix obstacle position rendering
+- [] Task : Fix obstacle bounds(extending beyond visual render for some reason)
+- [] Task : Change obstacles to enemy plane sprites
+- [] Task : Add button at start so game doesn't immediately start after running exe
 
 ## In Progress
-- [ ] Task : Add background image
 
 ## Completed
 - [x] Task : Implement sprite movement
@@ -26,9 +27,8 @@ Project will probably follow flappy bird game logic
 - [x] Task : Implement vertical column obstacles
 - [x] Task : Implement random repeating vertical obstacles as screen moves
 - [x] Task : Fix game over text not centering when rendered(also moving??)
-
-
-
+- [x] Task : Add background image
 
 
 ## Notes
+- Add shooting component to game?
