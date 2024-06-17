@@ -101,7 +101,6 @@ int main (int argc, char *argv[]) {
       window.clear();
 
       if (player.isGameOver()) {
-
           player.renderGameOver(window);
       } else {
 

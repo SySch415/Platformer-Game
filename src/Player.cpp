@@ -81,24 +81,16 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
     
     FloatRect bounds = sprite.getGlobalBounds();
 
-    /*
-    
-    // Wrap sprite around screen if leaving bounds
-    if (bounds.left + bounds.width < 0) {
-      sprite.setPosition(window.getSize().x, sprite.getPosition().y);
-
-    } else if (bounds.left > window.getSize().x) {
-      sprite.setPosition(-bounds.width, sprite.getPosition().y);
-    }
-    */
-    
-    // if sprite dies, reset position to start position
-    if (bounds.top > window.getSize().y) {
-      sprite.setPosition(400,300);
-    }
-
     // for sprite collisions against platform
     isGameOver = false;
+    
+    // if sprite leaves lower bound -> game over
+    if (bounds.top > window.getSize().y) {
+      gameOver = true;
+      gameOverText.setPosition(view.getCenter().x - gameOverText.getGlobalBounds().width / 2,
+          view.getCenter().y - gameOverText.getGlobalBounds().height / 2);
+    }
+
     for (const auto& obstacle : obstacles) {
 
       if (sprite.getGlobalBounds().intersects(obstacle.getBounds())) {
