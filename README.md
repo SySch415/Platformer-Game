@@ -9,11 +9,10 @@ Language: C++
 
 ## Features
 
-- Basic player movement
+- Player flying movement
 - jumping
-- Screen wrapping
+- seamless view movement
 - Platform collisions
-- Player resets if they fall out of bounds
 
 NOTE: Many more features to be added
     
@@ -80,9 +79,9 @@ This project depends on the SFML library. You need to have SFML installed to bui
 
 ## Usage
 
-- Use the arrow keys to move the player left, right, and jump.
-- The player will wrap around the screen edges.
-- If the player falls off the bottom, they will be reset to the starting position.
+- Use the arrow keys to keep player flying; like flappy bird.
+- The player will die when hitting obstacles, falling out of bounds
+- Game currently does not end.
     
 
 

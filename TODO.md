@@ -1,6 +1,5 @@
 # Platformer Game TO-DO
 
-Project will probably follow flappy bird game logic
 
 ## Table of Contents
 - [To-Do List](#to-do-list)
@@ -10,11 +9,11 @@ Project will probably follow flappy bird game logic
 ## TO-DO List
 - [] Task : blimp animation(up and down animation)
 - [] Task : Change to better background
-- [] Task : Change lower boundary to game over screen
 - [] Task : Fix obstacle position rendering
 - [] Task : Fix obstacle bounds(extending beyond visual render for some reason)
 - [] Task : Change obstacles to enemy plane sprites
-- [] Task : Add button at start so game doesn't immediately start after running exe
+- [] Task : Add button at start so game doesn't immediately start after running e
+- [] Task : Fix moving game over text
 
 ## In Progress
 
@@ -28,6 +27,7 @@ Project will probably follow flappy bird game logic
 - [x] Task : Implement random repeating vertical obstacles as screen moves
 - [x] Task : Fix game over text not centering when rendered(also moving??)
 - [x] Task : Add background image
+- [x] Task : Change lower boundary to game over screen
 
 
 ## Notes

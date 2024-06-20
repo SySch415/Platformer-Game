@@ -17,7 +17,7 @@ Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping
     sprite.setPosition(400,300); // start position
     velocity = Vector2f(0,0);
 
-      // load font
+    // load font
     if (!font.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/fonts/Tiny5-Regular.ttf")) {
       cerr << "Error loading font" << endl;
       return;
@@ -34,39 +34,27 @@ void Player::handleInput() {
 
     // player moves left
     if (Keyboard::isKeyPressed(Keyboard::Left)) {
-      velocity.x = -speed;
-    
+      velocity.x = -speed;   
     }
+    
     // sprite stops when depressing left key
     if (!(Keyboard::isKeyPressed(Keyboard::Left))) {
       velocity.x = 0;
     }
-    /*
-    // sprite stops when depressing right key
-    if (!(Keyboard::isKeyPressed(Keyboard::Right))) {
-      velocity.x = 0 ;
-    }
-    */
+
     // player moves right
     if (Keyboard::isKeyPressed(Keyboard::Right)) {
       velocity.x = speed;
     }
+    
     // player jumps
     if (Keyboard::isKeyPressed(Keyboard::Up) || 
         Keyboard::isKeyPressed(Keyboard::Up) && Keyboard::isKeyPressed(Keyboard::Left) ||
         Keyboard::isKeyPressed(Keyboard::Up) && Keyboard::isKeyPressed(Keyboard::Right)) {
 
-      velocity.y = -jumpHeight;
-      isJumping = true;
+        velocity.y = -jumpHeight;
+        isJumping = true;
     }
-    
-
-    /*
-    // player moves Down
-    if (Keyboard::isKeyPressed(Keyboard::Down)) {
-      sprite.move(0, speed * 0.1f);
-    }
-    */
 }
 
 void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, const RenderWindow& window, const View& view) {
@@ -78,7 +66,7 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
     // player moves calculated with time
     sprite.move(velocity * deltaTime);
 
-    
+    // bounds of sprite
     FloatRect bounds = sprite.getGlobalBounds();
 
     // for sprite collisions against platform
@@ -91,6 +79,8 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
           view.getCenter().y - gameOverText.getGlobalBounds().height / 2);
     }
 
+    // obstacle rendering
+    // check if playter touches obstacles; initiate game over state
     for (const auto& obstacle : obstacles) {
 
       if (sprite.getGlobalBounds().intersects(obstacle.getBounds())) {
@@ -102,14 +92,13 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
     }
 }
 
+// player rendering
 void Player::render(RenderWindow& window) {
-    // Render player
     window.draw(sprite);
 }
 
 // returns true if sprite collides with obstacle
 bool Player::isGameOver() const {
-      
   return gameOver;
 }
 

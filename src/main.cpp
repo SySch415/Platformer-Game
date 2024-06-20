@@ -14,11 +14,12 @@ int main (int argc, char *argv[]) {
         VideoMode(800, 600), "2D Platformer Game");
     Player player;
 
-    // load background image
     Texture backgroundTexture;
 
+    // load background image
     if (!backgroundTexture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/6fb59f66648033799c3059fd1943b319.png")) {
-        return -1;
+      cerr << "Error loading background image" << endl;
+      return -1;
     }
 
     // background sprites for scrolling
@@ -26,6 +27,7 @@ int main (int argc, char *argv[]) {
     backgroundSprite.setTexture(backgroundTexture);
     backgroundSprite2.setTexture(backgroundTexture);
 
+    // size of background image and game window 
     Vector2u textureSize = backgroundTexture.getSize();
     Vector2u windowSize = window.getSize();
 
@@ -65,9 +67,11 @@ int main (int argc, char *argv[]) {
             window.close();
       }
 
+      // game time and view scrolling offset
       float deltaTime = gameClock.restart().asSeconds();
       float offset = viewSpeed * deltaTime;
       
+      // move view to the right 
       view.move(offset, 0);
 
       // get width of background image
@@ -100,6 +104,7 @@ int main (int argc, char *argv[]) {
 
       window.clear();
 
+      // if isGameOver, render gameover screen; else render game
       if (player.isGameOver()) {
           player.renderGameOver(window);
       } else {
@@ -111,13 +116,12 @@ int main (int argc, char *argv[]) {
         
         window.setView(view);
 
+        // render obstacles
         for (auto& obstacle : obstacles) {
           obstacle.render(window);
         }
-
       }
       window.display();
     }
-
     return 0;
 }
