@@ -7,15 +7,14 @@
 - [Completed](#completed)
 
 ## TO-DO List
-- [] Task : blimp animation(up and down animation)
 - [] Task : Change to better background
 - [] Task : Fix obstacle position rendering
 - [] Task : Fix obstacle bounds(extending beyond visual render for some reason)
 - [] Task : Change obstacles to enemy plane sprites
-- [] Task : Add button at start so game doesn't immediately start after running e
-- [] Task : Fix moving game over text
+- [] Task : Add button at start so game doesn't immediately start after running
 
 ## In Progress
+- [] Task : blimp animation(up and down animation)
 
 ## Completed
 - [x] Task : Implement sprite movement
@@ -28,6 +27,8 @@
 - [x] Task : Fix game over text not centering when rendered(also moving??)
 - [x] Task : Add background image
 - [x] Task : Change lower boundary to game over screen
+- [x] Task : Fix moving game over text
+
 
 
 ## Notes

@@ -55,6 +55,11 @@ int main (int argc, char *argv[]) {
     obstacles.push_back(Obstacle(100, 100, 20, 200));
     obstacles.push_back(Obstacle(700, 500, 20, 200));
 
+    // start button
+    RectangleShape button(Vector2f(200,50));
+    button.setFillColor(Color::Blue);
+    button.setPosition(300,275);
+
     Clock gameClock;
     
     // keep window open until user exits out
@@ -106,6 +111,7 @@ int main (int argc, char *argv[]) {
 
       // if isGameOver, render gameover screen; else render game
       if (player.isGameOver()) {
+          view.move(-offset,0); // fixes gameover text moving
           player.renderGameOver(window);
       } else {
 
