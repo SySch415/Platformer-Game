@@ -3,6 +3,7 @@
 #include "Obstacle.h"
 #include <vector>
 #include <iostream>
+#include <memory>
 
 using namespace sf;
 using namespace std;
@@ -40,6 +41,12 @@ int main (int argc, char *argv[]) {
     // position second background image to the right of first for scrolling
     backgroundSprite2.setPosition(backgroundSprite.getGlobalBounds().width, 0);
 
+    auto enemyTexture = make_shared<Texture>();
+    if (!enemyTexture -> loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/enemysprite_updatedbounds.png")) {
+      cerr << "Error loading texture" << endl;
+      return -1;
+    }
+
     // define view
     View view = window.getDefaultView();
     
@@ -52,8 +59,8 @@ int main (int argc, char *argv[]) {
     // random number generator for obstacles
     srand(static_cast<unsigned>(time(nullptr)));
     
-    obstacles.push_back(Obstacle(100, 100, 20, 200));
-    obstacles.push_back(Obstacle(700, 500, 20, 200));
+    obstacles.push_back(Obstacle(100, 100, 152, 56, enemyTexture));
+    obstacles.push_back(Obstacle(700, 500, 152, 56, enemyTexture));
 
     // start button
     RectangleShape button(Vector2f(200,50));
@@ -99,8 +106,8 @@ int main (int argc, char *argv[]) {
       if (view.getCenter().x + 400 > lastObstacle) {
         float newX = lastObstacle + 200;
         float newY = static_cast<float>(rand() % 300);
-        obstacles.push_back(Obstacle(newX, newY, 20, 200));
-        obstacles.push_back(Obstacle(newX - 600, newY - 400, 20, 200));
+        obstacles.push_back(Obstacle(newX, newY, 152, 56, enemyTexture));
+        obstacles.push_back(Obstacle(newX - 600, newY - 400, 152, 56, enemyTexture));
         lastObstacle = newX;
       }
 

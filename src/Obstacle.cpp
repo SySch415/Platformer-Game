@@ -1,9 +1,20 @@
 #include "Obstacle.h"
+#include <iostream>
+
+using namespace sf;
+using namespace std;
+
 
 // constuctor to initialize platforms
-Obstacle::Obstacle(float x, float y, float width, float height) {
+Obstacle::Obstacle(float x, float y, float width, float height, const shared_ptr<Texture>& textureFile) {
   shape.setSize(Vector2f(width, height));
-  shape.setFillColor(Color::Red);
+  
+  if (textureFile) {
+    this->textureFile = textureFile;
+    shape.setTexture(textureFile.get());
+  } else {
+    cerr << "Image is null" << endl;
+  }
   shape.setPosition(x, y);
 }
 

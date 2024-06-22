@@ -6,15 +6,15 @@
 using namespace sf;
 
 class Obstacle {
-
 public:
 
-    Obstacle(float x, float y, float width, float height);
+    Obstacle(float x, float y, float width, float height, const std::shared_ptr<Texture>& textureFile);
     void render(RenderWindow& window);
     FloatRect getBounds() const;
 
 private:
     RectangleShape shape;
+    std::shared_ptr<Texture> textureFile;
 };
 
 #endif 
