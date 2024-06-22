@@ -14,7 +14,7 @@
 - [] Task : Add button at start so game doesn't immediately start after running
 
 ## In Progress
-- [] Task : blimp animation(up and down animation)
+- [] Task : fix blimp texture clipping for up key input
 
 ## Completed
 - [x] Task : Implement sprite movement
@@ -28,6 +28,7 @@
 - [x] Task : Add background image
 - [x] Task : Change lower boundary to game over screen
 - [x] Task : Fix moving game over text
+- [x] Task : blimp animation(up and down animation)
 
 
 
