@@ -8,6 +8,7 @@ using namespace std;
 
 // Define Player methods
 Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping(false), gameOver(false) {
+    
     // load a texture image
     if (!texture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/blimp_transparent copy.png")) {
         
@@ -17,6 +18,11 @@ Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping
     sprite.setPosition(400,300); // start position
     velocity = Vector2f(0,0);
 
+    // load angled sprite texture for up key input
+    if (!upTexture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/blimp_transparent copy 2.png")) {
+      cerr << "Error loading image" << endl;
+    }
+    
     // load font
     if (!font.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/fonts/Tiny5-Regular.ttf")) {
       cerr << "Error loading font" << endl;
@@ -47,13 +53,19 @@ void Player::handleInput() {
       velocity.x = speed;
     }
     
-    // player jumps
+    // player moves up
     if (Keyboard::isKeyPressed(Keyboard::Up) || 
         Keyboard::isKeyPressed(Keyboard::Up) && Keyboard::isKeyPressed(Keyboard::Left) ||
         Keyboard::isKeyPressed(Keyboard::Up) && Keyboard::isKeyPressed(Keyboard::Right)) {
 
         velocity.y = -jumpHeight;
         isJumping = true;
+        sprite.setTexture(upTexture);
+    }
+
+    // update texture if player stops moving up
+    if (!(Keyboard::isKeyPressed(Keyboard::Up))) {
+      sprite.setTexture(texture);
     }
 }
 

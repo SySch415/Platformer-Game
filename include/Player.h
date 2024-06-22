@@ -18,6 +18,7 @@ public:
 
 private:
     Texture texture;
+    Texture upTexture;
     Sprite sprite;
     float speed;
     float jumpHeight;
