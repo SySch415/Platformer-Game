@@ -61,6 +61,7 @@ void Player::handleInput() {
         velocity.y = -jumpHeight;
         isJumping = true;
         sprite.setTexture(upTexture);
+        sprite.setTextureRect(IntRect(0, 0, upTexture.getSize().x, upTexture.getSize().y));
     }
 
     // update texture if player stops moving up
