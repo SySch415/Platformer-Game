@@ -11,8 +11,10 @@
 - [] Task : Fix obstacle position rendering
 - [] Task : Fix obstacle bounds(extending beyond visual render for some reason)
 - [] Task : Add button at start so game doesn't immediately start after running
+- [] Task : improve bounds of enemy sprites
+
 ## In Progress
-- [] Task : Fix bounds of enemy sprites
+- [] Task : Add button at start so game doesn't immediately start after running
 
 ## Completed
 - [x] Task : Implement sprite movement
