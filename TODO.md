@@ -12,7 +12,7 @@
 - [] Task : Fix obstacle bounds(extending beyond visual render for some reason)
 - [] Task : Add button at start so game doesn't immediately start after running
 ## In Progress
-- [] Task : Change obstacles to enemy plane sprites
+- [] Task : Fix bounds of enemy sprites
 
 ## Completed
 - [x] Task : Implement sprite movement
@@ -28,6 +28,7 @@
 - [x] Task : Fix moving game over text
 - [x] Task : blimp animation(up and down animation)
 - [x] Task : fix blimp texture clipping for up key input
+- [x] Task : Change obstacles to enemy plane sprites
 
 
 
