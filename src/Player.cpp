@@ -11,8 +11,8 @@ Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping
     
     // load a texture image
     if (!texture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/blimp_transparent copy.png")) {
-        
       cerr << "Error loading image" << endl;
+      return;
     }
     sprite.setTexture(texture);
     sprite.setPosition(400,300); // start position
@@ -21,6 +21,7 @@ Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping
     // load angled sprite texture for up key input
     if (!upTexture.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/images/blimp_transparent copy 2.png")) {
       cerr << "Error loading image" << endl;
+      return;
     }
     
     // load font

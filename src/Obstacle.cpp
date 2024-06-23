@@ -12,10 +12,16 @@ Obstacle::Obstacle(float x, float y, float width, float height, const shared_ptr
   if (textureFile) {
     this->textureFile = textureFile;
     shape.setTexture(textureFile.get());
+    shape.setTextureRect(IntRect(0, 0, textureFile->getSize().x, textureFile->getSize().y));
+
   } else {
     cerr << "Image is null" << endl;
   }
+
   shape.setPosition(x, y);
+
+  // change bounds of obstacle to better fit collision with texture
+  customBounds = FloatRect(x + 30, y + 30, width - 50, height - 50);
 }
 
 // render platform
@@ -25,5 +31,5 @@ void Obstacle::render(RenderWindow& window) {
 
 // bounds of platform
 FloatRect Obstacle::getBounds() const {
-  return shape.getGlobalBounds();
+  return customBounds;
 }

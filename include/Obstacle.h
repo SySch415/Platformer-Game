@@ -15,6 +15,7 @@ public:
 private:
     RectangleShape shape;
     std::shared_ptr<Texture> textureFile;
+    FloatRect customBounds;
 };
 
 #endif 
