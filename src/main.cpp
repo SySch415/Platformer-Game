@@ -19,7 +19,7 @@ int main (int argc, char *argv[]) {
     
     // pop up the game window
     RenderWindow window(
-        VideoMode(800, 600), "2D Platformer Game");
+        VideoMode(800, 600), "Blimp Attack");
     Player player;
 
     Texture backgroundTexture;
@@ -91,6 +91,15 @@ int main (int argc, char *argv[]) {
         button.getPosition().y + (button.getSize().y - startButtonText.getLocalBounds().height) / 2 - 30
     );
 
+    Text startTitle;
+    startTitle.setFont(font);
+    startTitle.setString("Blimp Attack");
+    startTitle.setCharacterSize(150);
+    startTitle.setFillColor(Color::White);
+    startTitle.setPosition(button.getPosition().x - 200, button.getPosition().y - 250);
+
+
+
     Clock gameClock;
     
     GameState gameState = START;
@@ -124,6 +133,7 @@ int main (int argc, char *argv[]) {
       if (gameState == START) {
         window.draw(button);
         window.draw(startButtonText);
+        window.draw(startTitle);
       } else if (gameState == RUN) {
 
         // game time and view scrolling offset
