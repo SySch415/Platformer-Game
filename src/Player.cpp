@@ -33,7 +33,7 @@ Player::Player() : speed(200.0f), jumpHeight(300.0f), gravity(980.0f), isJumping
     // set up "game over" text
     gameOverText.setFont(font);
     gameOverText.setString("Game Over!");
-    gameOverText.setCharacterSize(50);
+    gameOverText.setCharacterSize(100);
     gameOverText.setFillColor(Color::White);
 }
 
@@ -90,7 +90,7 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
     if (bounds.top > window.getSize().y) {
       gameOver = true;
       gameOverText.setPosition(view.getCenter().x - gameOverText.getGlobalBounds().width / 2,
-          view.getCenter().y - gameOverText.getGlobalBounds().height / 2);
+          view.getCenter().y - gameOverText.getGlobalBounds().height / 2 - 50);
     }
 
     // obstacle rendering
@@ -100,7 +100,7 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
       if (sprite.getGlobalBounds().intersects(obstacle.getBounds())) {
         gameOver = true;
         gameOverText.setPosition(view.getCenter().x - gameOverText.getGlobalBounds().width / 2,
-            view.getCenter().y - gameOverText.getGlobalBounds().height / 2);
+            view.getCenter().y - gameOverText.getGlobalBounds().height / 2 - 50);
         break;
       }
     }
