@@ -75,6 +75,7 @@ int main (int argc, char *argv[]) {
     button.setFillColor(darkGreen);
     button.setPosition(300,275);
     
+    // Game name font
     Font font;
     if (!font.loadFromFile("/Users/sy/dev/cpp-projects/2d_platformer_game/assets/fonts/Pixellettersfull-BnJ5.ttf")) {
       cerr << "Error loading font" << endl;

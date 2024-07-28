@@ -21,6 +21,7 @@ Obstacle::Obstacle(float x, float y, float width, float height, const shared_ptr
   shape.setPosition(x, y);
 
   // change bounds of obstacle to better fit collision with texture
+  //  TODO: upper bound of obstacles still too large
   customBounds = FloatRect(x + 30, y + 30, width - 50, height - 50);
 }
 
