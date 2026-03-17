@@ -5,8 +5,7 @@ using namespace sf;
 using namespace std;
 
 
-// constuctor to initialize platforms
-Obstacle::Obstacle(float x, float y, float width, float height, const shared_ptr<Texture>& textureFile) {
+Obstacle::Obstacle(float x, float y, float width, float height, const shared_ptr<Texture> &textureFile) {
   shape.setSize(Vector2f(width, height));
   
   if (textureFile) {
@@ -26,7 +25,7 @@ Obstacle::Obstacle(float x, float y, float width, float height, const shared_ptr
 }
 
 // render platform
-void Obstacle::render(RenderWindow& window) {
+void Obstacle::render(RenderWindow &window) {
   window.draw(shape);
 }
 

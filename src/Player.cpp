@@ -71,7 +71,7 @@ void Player::handleInput() {
     }
 }
 
-void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, const RenderWindow& window, const View& view) {
+void Player::update(float deltaTime, const std::vector<Obstacle> &obstacles, const RenderWindow &window, const View &view) {
 
     bool isGameOver = false;
 
@@ -80,10 +80,8 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
     // player moves calculated with time
     sprite.move(velocity * deltaTime);
 
-    // bounds of sprite
     FloatRect bounds = sprite.getGlobalBounds();
 
-    // for sprite collisions against platform
     isGameOver = false;
     
     // if sprite leaves lower bound -> game over
@@ -93,8 +91,6 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
           view.getCenter().y - gameOverText.getGlobalBounds().height / 2 - 50);
     }
 
-    // obstacle rendering
-    // check if playter touches obstacles; initiate game over state
     for (const auto& obstacle : obstacles) {
 
       if (sprite.getGlobalBounds().intersects(obstacle.getBounds())) {
@@ -107,7 +103,7 @@ void Player::update(float deltaTime, const std::vector<Obstacle>& obstacles, con
 }
 
 // player rendering
-void Player::render(RenderWindow& window) {
+void Player::render(RenderWindow &window) {
     window.draw(sprite);
 }
 
@@ -117,6 +113,6 @@ bool Player::isGameOver() const {
 }
 
 // if player collides with obstacle, render game over screen
-void Player::renderGameOver(RenderWindow& window) {
+void Player::renderGameOver(RenderWindow &window) {
     window.draw(gameOverText);
 }
